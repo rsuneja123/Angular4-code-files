@@ -1,0 +1,9 @@
+<form>
+  <input name="name" #name="ngModel" [(ngModel)]="menu.name" />
+  <input name="rate" #rate="ngModel" [(ngModel)]="menu.rate" />
+  <input name="vendorname" #rate="ngModel" [(ngModel)]="menu.vendorName" />
+  <button type="submit" (click)="createMenu(menu)">Create</button>
+</form>
+<ul>
+  <li *ngFor="let item of items">name={{item.name}} and rate ={{item.rate}} and vendor={{item.vendorName}}</li>
+</ul>

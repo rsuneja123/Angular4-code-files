@@ -1,0 +1,26 @@
+<mat-card class="book1">
+  <mat-card-content>
+    <div class="example-container">
+      <form (ngSubmit)="signUpWith(user.email, user.password)" #myForm="ngForm">
+
+        <mat-form-field>
+          <input name="password" type="password" matInput placeholder="Enter Pswd" [(ngModel)]="user.password"
+                 required #username="ngModel" />
+        </mat-form-field>
+        <mat-form-field>
+          <input name="emailId" matInput placeholder="Enter Email" [(ngModel)]="user.email"
+                 required email #emailId="ngModel" />
+
+          <mat-error *ngIf="emailId.errors?.required">Email id is required.</mat-error>
+          <mat-error *ngIf="!emailId.errors?.required && emailId.errors?.email">Email id is not valid.</mat-error>
+
+
+        </mat-form-field>
+
+        <button type="submit" [disabled]="myForm.invalid" mat-raised-button color="accent">Sign-Up</button>
+
+      </form>
+    </div>
+    </mat-card-content>
+  </mat-card>
+

@@ -1,0 +1,13 @@
+.container {
+  background-color: blueviolet;
+  color:white;
+}
+.footer{
+  margin:10% 18% 0 18%;
+  display:flex;
+  justify-content:space-around;
+}
+  .footer  li {
+    list-style-type: none;
+    line-height:25px;
+  }

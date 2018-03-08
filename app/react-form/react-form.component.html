@@ -1,0 +1,36 @@
+<mat-tab-group>
+  <mat-tab label="Register">
+    
+
+<form [formGroup]="myForm" (ngSubmit)="signUp(myForm.value.emailId,myForm.value.password)">
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput type="text" formControlName="fname" />
+    <mat-error *ngIf="myForm.controls.fname.errors">Name is Mandatory</mat-error>
+  </mat-form-field><br />
+  <mat-form-field>
+    <input matInput type="email" formControlName="emailId" />
+  </mat-form-field><br />
+  <mat-form-field>
+    <input matInput type="password" formControlName="password" />
+    <div [hidden]="!password.hasError('needsExclamation')">
+      Your password must have an exclamation mark!
+    </div>
+  </mat-form-field>
+  <button type="submit">Submit</button>
+
+</form>
+</mat-tab>
+<mat-tab label="Login">
+  <form [formGroup]="myForm1">
+    <mat-form-field>
+      <mat-label>Name</mat-label>
+      <input matInput type="text" formControlName="emailId1" />
+      <mat-error *ngIf="myForm1.controls.emailId1.errors">Email is Mandatory</mat-error>
+    </mat-form-field><br />
+    <mat-form-field>
+      <input matInput type="password" formControlName="password1" />
+    </mat-form-field>
+    <button type="submit">Login</button>
+  </form>
+</mat-tab>

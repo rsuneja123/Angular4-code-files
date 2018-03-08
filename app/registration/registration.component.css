@@ -1,0 +1,8 @@
+.example-container {
+  display: flex;
+  flex-direction: column;
+}
+.book1{width:40%;}
+.example-container>*{
+  width:50%;
+}

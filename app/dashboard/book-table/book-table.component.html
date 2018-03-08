@@ -1,0 +1,75 @@
+<router-outlet></router-outlet>
+
+<div class="desc">
+  <div class="img1"><img src="./assets/toit.png" style="width:80%;height:80%;border-radius:10px;position:absolute;left:10%;top:10%" /></div>
+  <div><h3>Toit(Brew Pub)</h3><br /><p>Indiranagar,Bengaluru</p><br /><p>Open 11:00 AM -11:00 PM (Cost 2000 For 2 Persons)</p></div>
+  <div><b>Rating<br />4.5/5</b></div>
+  </div>
+
+
+
+<mat-card class="book">
+  <mat-card-content>
+    <div><form #myForm1="ngForm">
+  <h3>1. Please Select your booking Details:</h3>
+  <mat-form-field class="sec">
+    <input name="date" matInput [min]="minDate" [max]="maxDate" [matDatepicker]="picker" placeholder="Choose a date" ngModel required #date="ngModel">
+    <mat-error *ngIf="date.invalid">Select Date</mat-error>
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <mat-form-field class="sec">
+    <mat-select placeholder="No. of Person">
+      <mat-option [value]="guest" *ngFor="let guest of guests" >
+        {{ guest }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  <mat-form-field class="sec">
+    <mat-select placeholder="Select Time">
+      <mat-option   *ngFor="let food of foods" [value]="food">
+        {{ food }}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+</form>
+
+         <div class="book1">
+           <h3>2. Please select your personal details</h3>
+           <mat-form-field class="sec">
+             <input name="First" matInput placeholder="First Name" ngModel required #First="ngModel">
+             <mat-error *ngIf="First.invalid">Enter Field</mat-error>
+           </mat-form-field>
+           <mat-form-field class="sec">
+             <input name="last" matInput placeholder="Last Name" ngModel required #last="ngModel">
+           </mat-form-field><br />
+           <mat-form-field class="sec">
+             <span matPrefix>+91 &nbsp;</span>
+             <input type="tel" matInput placeholder="Telephone">
+
+           </mat-form-field>
+           <mat-form-field>
+             <input name="emailId" matInput placeholder="Enter E-mail" ngModel required email #emailId="ngModel" />
+             <mat-error *ngIf="emailId.errors?.required">Email is Mandatory</mat-error>
+             <mat-error *ngIf="!emailId.errors?.required && emailId.errors?.email">Not a Valid Email-Id</mat-error>
+
+           </mat-form-field>
+
+         </div>
+
+      <section class="example-section">
+        <label class="example-margin"><h3>Select Occasion:</h3><br /></label>
+        <mat-radio-group [(ngModel)]="align">
+          <mat-radio-button class="example-margin" value="start">Birthday</mat-radio-button>
+          <mat-radio-button class="example-margin" value="end">Anniversary</mat-radio-button>
+          <mat-radio-button class="example-margin" value="end">Break-up Party</mat-radio-button>
+        </mat-radio-group>
+      </section>
+    </div>
+  </mat-card-content>
+</mat-card>
+
+
+<button [disabled]="First.invalid || last.invalid ||date.invalid" mat-raised-button color="primary" class="btn">Confirm Booking</button>
+
+

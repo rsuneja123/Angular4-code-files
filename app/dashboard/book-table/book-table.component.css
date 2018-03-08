@@ -1,0 +1,42 @@
+.desc {
+  display: grid;
+  width: 70%;
+  max-height: 100%;
+  grid-template-columns: 25% 50% 25%;
+  background-color: dodgerblue;
+  border-radius: 6px;
+  margin-left: 15%;
+  grid-gap: 5px;
+  color: white;
+}
+
+.book {
+  margin-top: 2%;
+  background-color: ghostwhite;
+  width: 66%;
+  max-height: 100%;
+  margin-left: 15%;
+  border-radius: 6px;
+}
+
+@media screen and (max-width: 600px) {
+  .desc,.book,.list
+  {width:100% ;margin-left:0%;
+     }
+
+  }
+.img1 {
+  position: relative;
+}
+
+ .sec{margin-left:4%;}
+
+.example-margin {
+  margin: 0 10px;
+}
+
+.btn {
+  margin-left: 43%;
+  margin-top: 2%;
+  padding: 1%;
+}

@@ -1,0 +1,18 @@
+
+
+
+.router-links {
+  text-decoration: none;
+  color: black;
+  font-size: 14px;
+}
+
+.active-link {
+  color: red;
+}
+
+.fill-remaining-space {
+  /*This fills the remaining space, by using flexbox.  
+  Every toolbar row uses a flexbox row layout. */
+  flex: 1 1 auto;
+}

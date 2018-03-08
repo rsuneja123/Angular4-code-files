@@ -1,0 +1,23 @@
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+.mat-card-title
+{
+  font-size:1.5em;
+}
+.container, .mat-card-actions {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+  .container > mat-card {
+    width: 250px;
+  }
+
+.mat-card-actions>button{
+  width:40%;
+}
+
+

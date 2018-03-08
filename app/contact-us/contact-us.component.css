@@ -1,0 +1,29 @@
+.container {
+  display: grid;
+  grid-template-columns: auto;
+  width: 30%;
+  box-shadow: 0px 10px 10px 0px rgba(0,0,0,0.4);
+  grid-gap: 10px;
+  padding:10px;
+  background-color:aqua;
+
+}
+@media only screen and (max-width: 800px) {
+  .container {
+    width: 90%;
+    
+  }
+}.expression, .result {
+  grid-column-start: 1;
+    grid-column-end: 5;
+    padding: 10px;
+    font-size: 20px;
+    background-color: black;
+    color: white;
+    text-align-last: end;
+}
+.container>button
+{font-size: 20px;
+  padding:10px;
+  text-align:center;
+}
